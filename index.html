@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lyrics</title>
+    <link href="css/music.css" rel="stylesheet" type="text/css">
+    <script>
+        function LoadLyrics(title)
+        {
+            var xmlHttp;
+            if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            } else {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHttp");
+            }
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+                    document.getElementById("lyric_container").innerHTML = xmlHttp.responseText;
+                }
+            }
+            xmlHttp.open("GET", title + ".html", true);
+            xmlHttp.send();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h3>List lagu</h3>
+        <ul class="lyrics_list">
+            <li style="margin: 0;"><a href="#" onclick="LoadLyrics('Haru Haru'); return false;">Big Bang - Haru Haru</a></li>
+            <li style="margin: 0;"><a href="#" onclick="LoadLyrics('Shuo Hao De Xing Fu'); return false;">Jay Chow - Shuo Hao De Xing Fu</a></li>
+        </ul>
+    </div>
+    <div id="lyric_container"></div>
+</body>
+</html>

@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <title>Lyrics</title>
     <link href="css/music.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div>
+        <h3>List lagu</h3>
+        <ul class="lyrics_list">
+            <li style="margin: 0;"><a href="#" onclick="LoadLyrics('Haru Haru');">Big Bang - Haru Haru</a></li>
+            <li style="margin: 0;"><a href="#" onclick="LoadLyrics('Shuo Hao De Xing Fu');">Jay Chow - Shuo Hao De Xing Fu</a></li>
+            <li style="margin: 0;"><a href="#" onclick="LoadLyrics('Words I Want To Say To You');">Kim Jong Kook - Words I Want To Say To You</a></li>
+            <li style="margin: 0;"><a href="#" onclick="LoadLyrics('Your Scent');">Gary & Jung In - Your Scent</a></li>
+        </ul>
+    </div>
+    <div id="lyric_container"></div>
     <script>
         function LoadLyrics(title)
         {
@@ -21,17 +33,8 @@
             }
             xmlHttp.open("GET", title + ".html", true);
             xmlHttp.send();
+			return false;
         }
     </script>
-</head>
-<body>
-    <div>
-        <h3>List lagu</h3>
-        <ul class="lyrics_list">
-            <li style="margin: 0;"><a href="#" onclick="LoadLyrics('Haru Haru'); return false;">Big Bang - Haru Haru</a></li>
-            <li style="margin: 0;"><a href="#" onclick="LoadLyrics('Shuo Hao De Xing Fu'); return false;">Jay Chow - Shuo Hao De Xing Fu</a></li>
-        </ul>
-    </div>
-    <div id="lyric_container"></div>
 </body>
 </html>
